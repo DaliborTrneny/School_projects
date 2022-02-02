@@ -1,0 +1,118 @@
+{extends layout.latte}
+{import nav.latte}
+
+{block title}Users{/block}
+
+
+{block body}
+    {include nav_users}
+    {if isset($logged_user)}
+        {if $logged_user['colonist_role'] != 'colonist'}
+            <section class="colonists_block">
+                <h1>YOUR AVAILABLE ACTIONS</h1>
+                <div class="main_action_icons">
+                    <div class="action_block">
+                        <div class="ab_icon" style="padding: 25px 29px"><i class="fas fa-user-edit"></i></div>
+                        <div class="ab_text">Edit Colonist</div>
+                    </div>
+                    <div class="action_block">
+                        <div class="ab_icon" style="padding: 25px 29px"><i class="fas fa-user-plus"></i></div>
+                        <div class="ab_text">Add Colonist</div>
+                    </div>
+                    <div class="action_block">
+                        <div class="ab_icon" style="padding: 25px 28px"><i class="fas fa-user-minus"></i></div>
+                        <div class="ab_text">Delete Colonist</div>
+                    </div>
+                    {if $logged_user['colonist_role'] == 'supervisor'}
+                        <div class="action_block">
+                            <div class="ab_icon" style="padding: 25px 34px"><i class="fas fa-angle-double-up"></i></div>
+                            <div class="ab_text">Set Officer</div>
+                        </div>
+                    {/if}
+                </div>
+            </section>
+        {/if}
+    {/if}
+    <section class="colonists_block">
+        <h1>COLONISTS FROM THE SAME HABITAT</h1>
+        <form method="get" class="find_input">
+            <input type="text" name="query" palceholder="Colonist name">
+            <input type="submit" value="Find">
+            {if isset($logged_user)}   
+                {if $logged_user['colonist_role'] != 'colonist'}
+                    <a href="{link colonist_new}" class="add_new_user"><i class="fas fa-user-plus"></i></a>
+                {/if}
+            {/if}
+        </form>
+        <table class="fl-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Role</th>
+                    <th>Gender</th>
+                    <th>Habitat ID</th>
+                    <th colspan="3">Actions</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {foreach $colonists as $colonist}
+                    <tr>
+                        <td>{$colonist['id_colonist']}</td>
+                        <td>{$colonist['first_name']}</td>
+                        <td>{$colonist['last_name']}</td>
+                        <td>{$colonist['colonist_role']}</td>
+                        <td>
+                            {if $colonist['gender'] == 'female'}
+                                <i class="fas fa-female"></i>
+                            {else}
+                                <i class="fas fa-male"></i>
+                            {/if}
+                        </td>
+                        <td>{$colonist['id_habitat']}</td>
+                        {if isset($logged_user)}
+                            {if $logged_user['id_colonist'] != $colonist['id_colonist']}
+                                {if $logged_user['colonist_role'] != 'colonist'}
+                                    <td>
+                                        <!-- EDIT COLONIST -->
+                                        <a href="{link edit_colonist, [id => $colonist['id_colonist'] ] }" class="action_icons">
+                                            <i class="fas fa-user-edit"></i>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <!-- DELETE COLONIST -->
+                                        <a href="{link delete_colonist, [id => $colonist['id_colonist'] ] }" onclick="return confirm('Are you sure?')" class="action_icons">
+                                            <i class="fas fa-user-minus"></i>
+                                        </a>
+                                    </td>
+                                {else}
+                                    <td>
+                                        <a href="" class="action_icons"></a>
+                                    </td>
+                                    <td>
+                                        <a href="" class="action_icons"></a>
+                                    </td>
+                                {/if}
+                            {else}
+                                <td>
+                                    <a href="" class="action_icons"></a>
+                                </td>
+                                <td>
+                                    <a href="" class="action_icons"></a>
+                                </td>
+                            {/if}
+                        {/if}
+                        <td>
+                            <!-- COLONIST'S PROFILE -->
+                            <a href="{link colonist_profile, [id => $colonist['id_colonist'] ]}" class="action_icons">
+                                <i class="fas fa-arrow-circle-right"></i>
+                            </a>
+                        </td>
+                    </tr>
+                {/foreach}
+            </tbody>
+        </table>
+    </section>
+{/block}

@@ -1,0 +1,19 @@
+{extends layout.latte}
+{import form_components.latte}
+
+{block title}Edit user{/block}
+
+{block body}
+    {include user_form}
+    <iframe width="100%" id="gmap" src="https://maps.google.com/maps?q={$formData['street_name']},{$formData['street_number']},{$formData['city']},{$formData['zip']}&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+
+    {if $loggedUser['id_person'] != $formData['id_person']}
+        <script>
+            var inputs = document.getElementsByTagName('input');
+            for(i = 0; i < inputs.length; i++){
+                console.log(inputs[i]);
+                inputs[i].disabled = true;
+            }
+        </script>
+    {/if}
+{/block}

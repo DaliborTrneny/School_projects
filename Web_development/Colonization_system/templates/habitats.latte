@@ -1,0 +1,57 @@
+{extends layout.latte}
+{import nav.latte}
+
+{block title}Habitats{/block}
+
+
+{block body}
+    {include nav_habitats}
+    <section class="colonists_block">
+        <h1>HABITATS ON THE PROXIMA B</h1>
+        <form method="get" class="find_input">
+            <input type="text" name="query" palceholder="Colonist name">
+            <input type="submit" value="Find">
+            <a href="{link habitat_new}" class="add_new_user"><i class="fas fa-plus"></i></a>
+        </form>
+        <table class="fl-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Habitat Name</th>
+                    <th>X Coordinate</th>
+                    <th>Y Coordinate</th>
+                    <th>Max Population</th>
+                    <th>Officer ID</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {foreach $habitats as $habitat}
+                    <tr>
+                        <td>{$habitat['id_habitat']}</td>
+                        <td>{$habitat['habitat_name']}</td>
+                        <td>{$habitat['x_coordinate']}</td>
+                        <td>{$habitat['y_coordinate']}</td>
+                        <td>{$habitat['max_population']}</td>
+                        <td>{$habitat['id_officer']}</td>
+                        {if $logged_user['id_colonist'] == $habitat['id_officer']}
+                            <td>
+                                <!-- EDIT HABITAT -->
+                                <a href="{link edit_habitat, [id => $logged_user['id_habitat'] ]}" class="action_icons">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                            </td>
+                        {else}
+                            <td>
+                                <!-- EDIT HABITAT [EMPTY] -->
+                                <a class="action_icons"></a>
+                            </td>
+                        {/if}
+                    </tr>
+                {/foreach}
+            </tbody>
+
+        </table>
+    </section>
+{/block}

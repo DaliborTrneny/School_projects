@@ -1,0 +1,37 @@
+{extends layout.latte}
+{import nav.latte}
+
+{block title}Colonist's profile{/block}
+
+
+{block body}
+     {include nav_profile}
+     <section class="profile_base_css">
+          <h1>COLONIST'S PROFILE</h1>
+          <div class="profile_grid">
+               {if $colonist['gender'] == 'male'}
+                    <img src="/images/man_colonist_edited.jpg" alt="man colonist" class="profile_pic">
+               {else}
+                    <img src="/images/female_colonist.jpg" alt="man colonist" class="profile_pic">
+               {/if}
+               <a href="{link edit_colonist, [id => $colonist['id_colonist'] ]}" class="profile_button_look">Edit profile</a>
+               <div class="profile_main_info_content">
+                    <h3 style="letter-spacing: 0.5px;">{$colonist['first_name']} {$colonist['last_name']}</h3>
+                    <table>
+                         <td>
+                              <div class="category_info">Role:</div>
+                              <div class="content_info">{$colonist['colonist_role']}</div>
+                         </td>
+                         <td>
+                              <div class="category_info">Gender:</div>
+                              <div class="content_info">{$colonist['gender']}</div>
+                         </td>
+                         <td>
+                              <div class="category_info">Habitat ID:</div>
+                              <div class="content_info">{$colonist['id_habitat']}</div>
+                         </td>
+                    </table>
+               </div>
+          </div>
+     </section>
+{/block}

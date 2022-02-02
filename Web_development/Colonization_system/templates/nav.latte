@@ -1,0 +1,113 @@
+{extends layout.latte}
+
+{block nav}
+    <nav>
+        <img src="/images/logo_right_svg.svg" alt="ColoniseIT logo" class="nav_logo">
+        <ul>
+            <li><a href="{link colonist_profile, [id => $logged_user['id_colonist'] ]}"><i class="fas fa-user"></i><div class="nav_item_text">Profile</div></a></li>
+            {if isset($logged_user)}
+                {if $logged_user['colonist_role'] != 'colonist'}
+                    <li><a href="{link edit_habitat, [id => $logged_user['id_habitat'] ]}"><i class="fas fa-edit"></i><div class="nav_item_text">Edit habitat</div></a></li>
+                {/if}
+            {/if}
+            <li><a href="{link users_list}"><i class="fas fa-users"></i><div class="nav_item_text">List colonists</div></a></li>
+            {if isset($logged_user)}
+                {if $logged_user['colonist_role'] != 'colonist'}
+                    <li><a href="{link habitats_list}"><i class="fas fa-city"></i><div class="nav_item_text">List habitats</div></a></li>
+                {/if}
+            {/if}
+            <li><a href="{link habitat_map}"><i class="fas fa-map-marked-alt"></i><div class="nav_item_text">Map</div></a></li>
+            <li><a href="{link logout}"><i class="fas fa-sign-out-alt"></i><div class="nav_item_text">Log out</div></a></li>
+        </ul>
+    </nav>
+{/block}
+
+{block nav_users}
+    <nav>
+        <img src="/images/logo_right_svg.svg" alt="ColoniseIT logo" class="nav_logo">
+        <ul>
+            <li><a href="{link homepage}"><i class="fas fa-undo-alt"></i><div class="nav_item_text">Back</div></a></li>
+            <li><a href="{link colonist_profile, [id => $logged_user['id_colonist'] ]}"><i class="fas fa-user"></i><div class="nav_item_text">Profile</div></a></li>
+            <li><a href="{link logout}"><i class="fas fa-sign-out-alt"></i><div class="nav_item_text">Log out</div></a></li>
+        </ul>
+    </nav>
+{/block}
+
+{block nav_habitats}
+    <nav>
+        <img src="/images/logo_right_svg.svg" alt="ColoniseIT logo" class="nav_logo">
+        <ul>
+            <li><a href="{link homepage}"><i class="fas fa-undo-alt"></i><div class="nav_item_text">Back</div></a></li>
+            <li><a href="{link edit_habitat, [id => $logged_user['id_habitat'] ]}"><i class="fas fa-landmark"></i><div class="nav_item_text">Edit habitat</div></a></li>
+            <li><a href="{link habitat_map}"><i class="fas fa-map-marked-alt"></i><div class="nav_item_text">Map</div></a></li>
+            <li><a href="{link logout}"><i class="fas fa-sign-out-alt"></i><div class="nav_item_text">Log out</div></a></li>
+        </ul>
+    </nav>
+{/block}
+
+{block nav_profile}
+    <nav>
+        <img src="/images/logo_right_svg.svg" alt="ColoniseIT logo" class="nav_logo">
+        <ul>
+            <li><a href="{link homepage}"><i class="fas fa-undo-alt"></i><div class="nav_item_text">Back</div></a></li>
+            <li><a href="{link colonist_profile, [id => $logged_user['id_colonist'] ]}" style="color:var(--primary-usage-color)"><i class="fas fa-user"></i><div class="nav_item_text">Profile</div></a></li>
+            <li><a href="{link users_list}"><i class="fas fa-list"></i><div class="nav_item_text">List Users</div></a></li>
+            <li><a href="{link logout}"><i class="fas fa-sign-out-alt"></i><div class="nav_item_text">Log out</div></a></li>
+        </ul>
+    </nav>
+{/block}
+
+{block nav_edit_profile}
+    <nav>
+        <img src="/images/logo_right_svg.svg" alt="ColoniseIT logo" class="nav_logo">
+        <ul>
+            <li><a href="{link colonist_profile, [id => $colonist['id_colonist'] ]}"><i class="fas fa-undo-alt"></i><div class="nav_item_text">Back</div></a></li>
+            <li><a href="{link logout}"><i class="fas fa-sign-out-alt"></i><div class="nav_item_text">Log out</div></a></li>
+        </ul>
+    </nav>
+{/block}
+
+{block nav_edit_habitat}
+    <nav>
+        <img src="/images/logo_right_svg.svg" alt="ColoniseIT logo" class="nav_logo">
+        <ul>
+            <li><a href="{link habitats_list}"><i class="fas fa-undo-alt"></i><div class="nav_item_text">Back</div></a></li>
+            <li><a href="{link logout}"><i class="fas fa-sign-out-alt"></i><div class="nav_item_text">Log out</div></a></li>
+        </ul>
+    </nav>
+{/block}
+
+{block nav_add_colonist}
+    <nav>
+        <img src="/images/logo_right_svg.svg" alt="ColoniseIT logo" class="nav_logo">
+        <ul>
+            <li><a href="{link users_list}"><i class="fas fa-undo-alt"></i><div class="nav_item_text">Back</div></a></li>
+            <li><a href="{link logout}"><i class="fas fa-sign-out-alt"></i><div class="nav_item_text">Log out</div></a></li>
+        </ul>
+    </nav>
+{/block}
+
+{block nav_add_habitat}
+    <nav>
+        <img src="/images/logo_right_svg.svg" alt="ColoniseIT logo" class="nav_logo">
+        <ul>
+            <li><a href="{link habitats_list}"><i class="fas fa-undo-alt"></i><div class="nav_item_text">Back</div></a></li>
+            <li><a href="{link logout}"><i class="fas fa-sign-out-alt"></i><div class="nav_item_text">Log out</div></a></li>
+        </ul>
+    </nav>
+{/block}
+
+{block nav_habitats_map}
+    <nav>
+        <img src="/images/logo_right_svg.svg" alt="ColoniseIT logo" class="nav_logo">
+        <ul>
+            <li><a href="{link homepage}"><i class="fas fa-undo-alt"></i><div class="nav_item_text">Back</div></a></li>
+            {if isset($logged_user)}
+                {if $logged_user['colonist_role'] != 'colonist'}
+                    <li><a href="{link habitats_list}"><i class="fas fa-list"></i><div class="nav_item_text">List habitats</div></a></li>
+                {/if}
+            {/if}
+            <li><a href="{link logout}"><i class="fas fa-sign-out-alt"></i><div class="nav_item_text">Log out</div></a></li>
+        </ul>
+    </nav>
+{/block}

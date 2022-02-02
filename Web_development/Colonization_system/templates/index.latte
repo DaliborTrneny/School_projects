@@ -1,0 +1,20 @@
+{extends layout.latte}
+
+{block title}Welcome Newcomer!{/block}
+
+{block body}
+    <section class="login_page">
+        <img src="/images/login_image.png" alt="Space nebula with logo" class="login_img">
+        <div class="login_block">
+            <h1>Log In</h1>
+            <form method="POST">
+                <input type="text" name="last_name" placeholder="Username" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <input type="submit" name="" value="Log in">
+                {if isset($message)}
+                    <p class="login_warning">{$message}</p>
+                {/if}
+            </form>
+        </div>
+    </section>
+{/block}

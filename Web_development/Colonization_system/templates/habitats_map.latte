@@ -1,0 +1,40 @@
+{extends layout.latte}
+{import nav.latte}
+
+{block title}Habitats map{/block}
+
+{block body}
+    {include nav_habitats_map}
+    <div class="main_content">
+        <section>
+                <h1>HABITAT MAP OF PROXIMA B</h1>
+                <div class="map_block">
+                    {foreach $habitatsRep as $habitatSquare}
+                        <div class="habitat_square"></div>
+                        <script>
+                            var save;
+                            
+                            if (save > 0) {
+                                var iteration = save;
+                            } else {
+                                var iteration = 0;
+                            }
+
+                            var inputs = document.getElementsByClassName('habitat_square');
+                            var requiredInput = inputs[iteration];
+
+                            requiredInput.style.marginLeft = '<?php echo $habitatSquare['x_coordinate']?>' + "px";
+                            requiredInput.style.marginTop = '<?php echo $habitatSquare['y_coordinate']?>' + "px";
+
+                            iteration = iteration + 1;
+
+                            save = iteration;
+
+                            // console.log(iteration);
+                        </script>
+                    {/foreach}
+                    <img src="/images/map.png" class="map_image">
+                </div>
+        </section>
+    </div>
+{/block}

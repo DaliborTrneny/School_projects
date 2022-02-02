@@ -1,0 +1,46 @@
+{extends layout.latte}
+{import nav.latte}
+
+{block title}Home{/block}
+
+
+{block body}
+    {include nav}
+    <div class="main_content">
+        <section>
+            <h1>DAILY SUPERVISOR QUOTE</h1>
+            <div class="main_contents_containers">
+                <img src="/images/supervisor.jpg" class="mcc_circle_image">
+                <div class="mcc_text_bar"><p>"It must be thursday. I never could get the hang of thursdays."</p></div>
+            </div>
+        </section>
+        <section>
+            <h1>TOP 3 FEATURED HABITATS</h1>
+            <div class="main_contents_containers">
+                <div class="habitats_section">
+                    <div class="featured_habitat">
+                        <div>
+                            <img src="/images/roseway1.png" class="fh_habitat_image">
+                        </div>
+                        <h3>Roseway</h3>
+                        <p>Roseway is a company town in Roseway Gardens on Terra 2. It is owned and operated by Auntie Cleo</p>
+                    </div>
+                    <div class="featured_habitat">
+                        <div>
+                            <img src="/images/emerald_vale1.png" class="fh_habitat_image">
+                        </div>
+                        <h3>Emerald Vale</h3>
+                        <p>Emerald Vale is a region on the planet Terra 2</p>
+                    </div>
+                    <div class="featured_habitat">
+                        <div>
+                            <img src="/images/monarch1.png" class="fh_habitat_image">
+                        </div>
+                        <h3>Monarch</h3>
+                        <p>Monarch, previously known as Terra 1, is one of the many moons of the gas giant Olympus and the site of a failed colony</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+{/block}

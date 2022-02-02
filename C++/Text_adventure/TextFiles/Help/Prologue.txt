@@ -1,0 +1,11 @@
+
+-------------------------------------------------Prologue------------------------------------------------
+Welcome to our game!
+We are happy that you are here. Anyway if you want to start game press [1] in main menu.
+
+Then you have to choose difficulty. For newcomers i would suggest Easy / Normal.
+Hard difficulty is for experienced hardcore gamers, who are familiary with souls like games.
+
+Grab a drink and popcorn, get ready, because you started your own adventure. 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

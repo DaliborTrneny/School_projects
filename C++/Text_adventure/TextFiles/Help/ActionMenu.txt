@@ -1,0 +1,14 @@
+
+----------------------------------------------Action Menu------------------------------------------------
+Most of the time you have to choose from several actions in action menu.
+To complete your action you have to write to terminal number/letter, which is located in square brackets.
+
+Example:
+[1] Action 1
+[2] Action 2
+ 1
+I am doing Action 1...
+
+From there is everything pretty intuitive.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

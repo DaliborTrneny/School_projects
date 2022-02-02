@@ -1,0 +1,20 @@
+
+---------------------------------------------Fighting system---------------------------------------------
+When you step on tile marked with enemy sign, you have option to fight enemy.
+If you do so. You start fight with your current HP and maximum of Stamina. 
+Enemy will atack you every round of fight. You have option to strike him with light or heavy attack. 
+Light attack do less damage but cost less stamina and heavy attack hit harder 
+but cost a way more stamina.
+
+If you don't have enough stamina to perfom any kind of attack, you have to you "rest" action
+in action menu. In this case enemy will still perform his attack.
+
+Your two or your stats are directly helping during the battle.
+
+Agility - makes your stamina much more effective during fight (your attacks cost less stamina)
+Strenght - your attacks are dealing more damage
+
+Last one is little bit tricky. Flirt give you romance option for NPCs. If you have higher charisma then 
+NPC, you will get lasting damage bonus based on their stamina.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

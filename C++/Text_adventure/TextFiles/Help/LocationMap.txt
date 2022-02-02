@@ -1,0 +1,20 @@
+
+---------------------------------------------Location Map------------------------------------------------
+Your movements across the location map are made through action menu. If you want to interact
+with something you have to get on the proper tile.
+
+Location legend:
+ Tile(ex. |____| ) - smallest piece of location, there is variety of tiles and most of them are accesible
+
+ Unaccesible tiles:
+ _{##}_ - Fire
+ ~~~~~~ - Water
+
+ Legend:
+ ** - your actual position
+ FR - NPC (non-player character)
+ E1 - enemy and level of the enemy (in this particular we have enemy with level 1)
+ CH - chest (there is two types of chests: locked and unlocked, locked ones can be unlocked through keys)
+ EXIT - tile for exiting location
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

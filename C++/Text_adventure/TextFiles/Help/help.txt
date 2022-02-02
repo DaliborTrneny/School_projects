@@ -1,0 +1,45 @@
+
+-----------------------------------------------------Help------------------------------------------------
+---prologue---
+Welcome to our game!
+We are happy that you are here. Anyway if you want to start game press [1] in main menu.
+
+Then you have to choose difficulty. For newcomers i would suggest Easy / Normal.
+Hard difficulty is for experienced hardcore gamers, who are familiary with souls like games.
+
+Grab a drink and popcorn, get ready, because you started your own adventure. 
+
+---action menu---
+Most of the time you have to choose from several actions in action menu.
+To complete your action you have to write to terminal number/letter, which is located in square brackets.
+
+Example:
+[1] Action 1
+[2] Action 2
+ 1
+I am doing Action 1...
+
+From there is everything pretty intuitive.
+
+---location map---
+Your movements across the location map are made through action menu. If you want to interact
+with something you have to get on the proper tile.
+
+Location legend:
+ Tile(ex. |____| ) - smallest piece of location, there is variety of tiles and most of them are accesible
+ ** - your actual position
+ FR - NPC (non-player character)
+ E1 - enemy and level of the enemy (in this particular we have enemy with level 1)
+ CH - chest (there is two types of chests: locked and unlocked, locked ones can be unlocked through keys)
+ EXIT - tile for exiting location
+
+---fighting system---
+When you step on tile marked with enemy sign, you have option to fight enemy.
+If you do so. You start fight with your current HP and maximum of Stamina. 
+Enemy will atack you every round of fight. You have option to strike him with light or heavy attack. 
+Light attack do less damage but cost less stamina and heavy attack hit harder 
+but cost a way more stamina.
+
+If you don't have enough stamina to perfom any kind of attack, you have to you "rest" action
+in action menu. In this case enemy will still perform his attack.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

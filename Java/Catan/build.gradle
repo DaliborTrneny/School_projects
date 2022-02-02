@@ -1,0 +1,34 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+def urlFile = { String url  ->
+    File file = new File("$buildDir/libs/${url.substring(url.lastIndexOf("/"))}")
+    file.parentFile.mkdirs()
+    if (!file.exists()) {
+        new URL(url).withInputStream { downloadStream ->
+            file.withOutputStream { fileOut ->
+                fileOut << downloadStream
+            }
+        }
+    }
+    files(file.absolutePath)
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+
+    implementation urlFile('https://akela.mendelu.cz/~xkoloma1/pjj/libs/greenfoot-runner-dist-LAST.jar')
+}
+
+test {
+    useJUnitPlatform()
+}
